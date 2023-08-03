@@ -21,6 +21,8 @@ from todo_list_api import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('api/task', views.TodoList.as_view(), name='api_data'),
-    path('api/task/<int:pk>', views.TodoListDetail.as_view()),
+    path('api/task', views.TodoList.as_view(), name='list_of_tasks'),
+    path('api/task/<int:pk>', views.TodoListDetail.as_view(), name='task'),
+    path('users/', views.UserList.as_view()),
+    path('users/<int:pk>/', views.UserDetail.as_view()),
 ]
