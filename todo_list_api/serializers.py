@@ -1,15 +1,15 @@
-from rest_framework import serializers
-
-from todo_list_api.models import TodoListModels
-from rest_framework.serializers import ValidationError
 from django.contrib.auth.models import User
+from rest_framework import serializers
+from rest_framework.serializers import ValidationError
+
+from todo_list_api.models import Task
 
 
 class TodoListSerializer(serializers.ModelSerializer):
     owner = serializers.ReadOnlyField(source='owner.username')
 
     class Meta:
-        model = TodoListModels
+        model = Task
         fields = ['id', 'owner', 'username', 'title', 'description', 'is_done']
 
     def validate(self, data):
@@ -25,7 +25,7 @@ class TodoListSerializer(serializers.ModelSerializer):
 
 
 class UserSerializer(serializers.ModelSerializer):
-    tasks = serializers.PrimaryKeyRelatedField(many=True, queryset=TodoListModels.objects.all())
+    tasks = serializers.PrimaryKeyRelatedField(many=True, queryset=Task.objects.all())
 
     class Meta:
         model = User

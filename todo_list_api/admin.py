@@ -1,6 +1,6 @@
 from django.contrib import admin
 
 # Register your models here.
-from todo_list_api.models import TodoListModels
+from todo_list_api.models import Task
 
-admin.site.register(TodoListModels)
+admin.site.register(Task)
