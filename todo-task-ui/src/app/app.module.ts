@@ -10,6 +10,7 @@ import {ViewTaskComponent} from "./components/view-task/view-task.component";
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { EditTaskComponent } from './components/edit-task/edit-task.component';
 import {AddTaskComponent} from "./components/add-task/add-task.component";
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import {AddTaskComponent} from "./components/add-task/add-task.component";
     AppRoutingModule,
     RouterOutlet,
     ReactiveFormsModule,
-    NgbModule
+    NgbModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

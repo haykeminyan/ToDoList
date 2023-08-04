@@ -12,9 +12,9 @@ class Task(models.Model):
         null=True,
         blank=True,
     )
-    username = models.CharField(max_length=10, blank=True, null=True)
-    title = models.CharField(max_length=20, blank=True, null=True)
-    description = models.CharField(max_length=200, null=True)
+    username = models.CharField(max_length=10)
+    title = models.CharField(max_length=20)
+    description = models.CharField(max_length=200)
     is_done = models.BooleanField()
 
     def __str__(self) -> str:

@@ -9,7 +9,7 @@
         [ngClass]="{ 'is-invalid': submitted && f['username'].errors }"
       />
       <div *ngIf="submitted && f['username'].errors" class="invalid-feedback">
-        <div *ngIf="f['username'].errors['required']">Fullname is required</div>
+        <div *ngIf="f['username'].errors['required']">Username is required</div>
       </div>
     </div>
 
@@ -22,7 +22,7 @@
         [ngClass]="{ 'is-invalid': submitted && f['title'].errors }"
       />
       <div *ngIf="submitted && f['title'].errors" class="invalid-feedback">
-        <div *ngIf="f['title'].errors['required']">Username is required</div>
+        <div *ngIf="f['title'].errors['required']">Title is required</div>
         <div *ngIf="f['title'].errors['minlength']">
           Reference
         </div>
