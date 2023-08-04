@@ -7,12 +7,17 @@ import {RouterOutlet} from "@angular/router";
 import {ListTaskComponent} from "./components/list-task/list-task.component";
 import {AppRoutingModule} from "./app-routing.module";
 import {ViewTaskComponent} from "./components/view-task/view-task.component";
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { EditTaskComponent } from './components/edit-task/edit-task.component';
+import {AddTaskComponent} from "./components/add-task/add-task.component";
 
 @NgModule({
   declarations: [
     AppComponent,
     ListTaskComponent,
-    ViewTaskComponent
+    ViewTaskComponent,
+    EditTaskComponent,
+    AddTaskComponent
   ],
   imports: [
     BrowserModule,
@@ -20,7 +25,8 @@ import {ViewTaskComponent} from "./components/view-task/view-task.component";
     HttpClientModule,
     AppRoutingModule,
     RouterOutlet,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]

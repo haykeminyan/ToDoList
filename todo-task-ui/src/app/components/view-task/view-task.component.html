@@ -2,44 +2,24 @@
   <thead>
   <tr>
     <th scope="col">id</th>
-    <th scope="col">Name</th>
-    <th scope="col">Created date</th>
-    <th scope="col">Address</th>
-    <th scope="col">Reference</th>
-    <th scope="col">Quantity</th>
-    <th scope="col">Percent</th>
-    <th scope="col">Quantity after percent</th>
-    <th scope="col">Net a payer</th>
-    <th scope="col">Advance payment</th>
-    <th scope="col">Total payment</th>
-    <th scope="col">Total tax</th>
-    <th scope="col">Total payment after tax</th>
+    <th scope="col">Username</th>
+    <th scope="col">Title</th>
+    <th scope="col">Description</th>
+    <th scope="col">Status</th>
   </tr>
   </thead>
   <tbody>
-  <tr *ngFor="let task of tasks">
-    <th scope="row">{{ task.name }}</th>
-    <td>
-      <img
-        [src]="'https://upload.wikimedia.org/wikipedia/commons/9/96/Flag_of_Armenia_%28Soviet_colors%29.svg'"
-        class="me-2"
-        style="width: 20px"
-      />
-<!--      {{ facture.name }}-->
-    </td>
-<!--    <td>{{ facture.created_date | date}}</td>-->
-<!--    <td>{{ facture.address }}</td>-->
-<!--    <td>{{ facture.reference }}</td>-->
-<!--    <td>{{ facture.destination }}</td>-->
-<!--    <td>{{ facture.quantity | number }}</td>-->
-<!--    <td>{{ facture.percent }}</td>-->
-<!--    <td>{{ facture.quantity_after_percent }}</td>-->
-<!--    <td>{{ facture.net_a_payer }}</td>-->
-<!--    <td>{{ facture.advance_payment }}</td>-->
-<!--    <td>{{ facture.total_payment }}</td>-->
-<!--    <td>{{ facture.total_tax }}</td>-->
-<!--    <td>{{ facture.total_payment_after_tax }}</td>-->
 
+  <tr *ngFor="let task of tasks">
+    <th scope="row">{{ task.id }}</th>
+    <td>
+      {{ task.username }}
+    </td>
+    <td>{{ task.title }}</td>
+    <td>{{ task.description }}</td>
+    <td>{{ task.is_done }}</td>
+    <button color="primary" [routerLink]="['']" class="btn btn-primary">return</button>
+    <button color="primary" type="submit" class="btn btn-primary" (click)="deleteTask(task.id)">delete</button>
   </tr>
   </tbody>
 

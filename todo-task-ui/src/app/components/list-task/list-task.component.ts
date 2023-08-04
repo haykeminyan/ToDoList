@@ -25,4 +25,11 @@ export class ListTaskComponent implements OnInit {
       }
     )
   }
+
+  deleteTask(id: any) {
+    this.service.delete(id).subscribe(()=>{
+      this.tasks = this.tasks.filter((value: { id: any; }) => value.id !== id);
+    })
+  }
+
 }
