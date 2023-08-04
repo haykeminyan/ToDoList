@@ -10,4 +10,4 @@ class StandardResultsSetPagination(PageNumberPagination):
 
 
 class SearchResultsSet(SearchFilter):
-    search_fields = ['username']
+    search_fields = ['username', 'is_done']
