@@ -13,7 +13,7 @@ class Task(models.Model):
         blank=True,
     )
     username = models.CharField(max_length=10, blank=True, null=True)
-    title = models.CharField(max_length=20, blank=True)
+    title = models.CharField(max_length=20, blank=True, null=True)
     description = models.CharField(max_length=200, null=True)
     is_done = models.BooleanField()
 

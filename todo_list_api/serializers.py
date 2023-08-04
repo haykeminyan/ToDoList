@@ -21,6 +21,7 @@ class TodoListSerializer(serializers.ModelSerializer):
 
         if errors:
             raise ValidationError(errors)
+
         return data
 
 
