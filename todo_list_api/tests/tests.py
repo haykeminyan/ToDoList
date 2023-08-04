@@ -1,24 +1,25 @@
-import json
-from django.urls import reverse
+import pytest
+import requests
 
-import parameterized as parameterized
-from django.test import TestCase
-
-from todo_list_api.tests.conftest import create_task
+ENDPOINT = 'http://127.0.0.1:8000/api/task'
 
 
-# Create your tests here.
+def create_request():
+    return {
+        "username": "ashot1",
+        "is_done": False,
+        "title": "as",
+        "description": "123"
+    }
 
-def test_create_task(self):
+
+def test_initial_test():
     # given
-    request = create_task()
+
+    request = create_request()
 
     # when
-    response = self.client.post(
-        reverse('list_of_tasks'),
-        json.dumps(request),
-        content_type='application/json',
-    )
+    response = requests.post(ENDPOINT, json=request)
 
     # then
-    self.assertEqual(response.status_code, 201)
+    assert response.status_code == 201
