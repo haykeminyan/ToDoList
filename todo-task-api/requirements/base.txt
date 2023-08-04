@@ -103,6 +103,8 @@ virtualenv==20.24.2
     # via -r base.in
 wheel==0.41.0
     # via pip-tools
+django-cors-headers==4.2.0
+    # via pip-tools
 
 # The following packages are considered to be unsafe in a requirements file:
 # pip
