@@ -1,21 +1,28 @@
 import { Component, OnInit } from '@angular/core';
 import {TaskService} from "../../services/task.service";
+import {ActivatedRoute, Router} from "@angular/router";
 @Component({
   selector: 'app-list-task',
   templateUrl: './list-task.component.html',
   styleUrls: ['./list-task.component.css']
 })
 export class ListTaskComponent implements OnInit {
-
-  constructor(private taskService: TaskService) { }
+  tasks: any = [];
+  constructor(    private router: Router,
+                  private activeRoute: ActivatedRoute,
+                  private service: TaskService) { }
 
   ngOnInit(): void {
-    console.log('!!')
-    this.getApi()
+    this.allTasks()
+    console.log(this.tasks)
   }
-  getApi() {
-    this.taskService.get().subscribe((response: any) => {
-      console.log(response)
-    });
+
+  allTasks(){
+    this.service.get().subscribe(
+      response => {
+        this.tasks = response.body as unknown as Task[]
+        console.log(this.tasks)
+      }
+    )
   }
 }

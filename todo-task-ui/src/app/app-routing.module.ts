@@ -6,6 +6,7 @@ import {ListTaskComponent} from "./components/list-task/list-task.component";
 
 const routes: Routes = [
   { path: '', component: ListTaskComponent},
+  { path: 'details', component: ViewTaskComponent},
 ];
 
 @NgModule({

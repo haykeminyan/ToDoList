@@ -1,1 +1,26 @@
-<p>list-task works!</p>
+ <table class="table table-striped">
+    <thead>
+    <tr>
+      <th scope="col">id</th>
+      <th scope="col">Username</th>
+      <th scope="col">Title</th>
+      <th scope="col">Description</th>
+      <th scope="col">Status</th>
+    </tr>
+    </thead>
+    <tbody>
+
+    <tr *ngFor="let task of tasks">
+      <th scope="row">{{ task.id }}</th>
+      <td>
+        {{ task.username }}
+      </td>
+      <td>{{ task.title }}</td>
+      <td>{{ task.description }}</td>
+      <td>{{ task.is_done }}</td>
+
+    </tr>
+    </tbody>
+
+  </table>
+

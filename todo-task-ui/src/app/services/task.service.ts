@@ -7,12 +7,15 @@ const baseUrl = 'http://localhost:8000/api/task'
 export class TaskService {
 
   constructor(private http: HttpClient) {
-    this.get()
   }
-
   get(){
     const url = `http://localhost:8000/api/task`
-    console.log(`http://localhost:8000/api/task`)
+    console.log(this.http.get<HttpResponse<any>>(url, { observe: 'response' }))
+    return this.http.get<HttpResponse<any>>(url, { observe: 'response' })
+  }
+  getTask(id: any){
+    const url = `http://localhost:8000/api/task/${id}`
+    console.log(`http://localhost:8000/api/task/${id}`)
     return this.http.get<HttpResponse<any>>(url, { observe: 'response' })
   }
 }
