@@ -1,37 +1,29 @@
-table {
-  width: 100%;
-  overflow-x: auto;
-  overflow-y: hidden;
-  min-width: 500px;
-}
-th.mat-header-cell {
-  text-align: left;
-  max-width: 300px;
-}
 
-.tab-content{
-  min-width: 100%;
-  border-collapse: collapse;
-  border: 1px black solid;
-}
-th {
-  border-bottom: 3px black solid;
-  border-left: 1px black solid;
-  border-right: 1px black solid;
-  white-space: nowrap;
-}
-
-td {
+.form-group {
   border-top: 0;
   border-bottom: 0;
+  display: block ruby;
   border-left: 1px black solid;
   border-right: 1px black solid;
   text-align: center;
 }
-
-tr {
-  min-width: 200%;
+input[type=text] {
+  width: 30%;
+  padding: 8px 14px;
+  margin: 2px;
+  box-sizing: border-box;
 }
-.example-form-field {
-  display: block ruby;
+button {
+  font-size: 12px;
+  margin: 2px;
+  padding: 8px 14px;
+}
+.form-control.ng-valid:not(form)  {
+  margin-left: 12px;
+  border-left: 5px solid #42A948; /* green */
+}
+
+.form-control.ng-invalid:not(form)  {
+  margin-left: 12px;
+  border-left: 5px solid #a94442; /* red */
 }

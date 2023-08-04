@@ -15,7 +15,7 @@ class Task(models.Model):
     username = models.CharField(max_length=10)
     title = models.CharField(max_length=20)
     description = models.CharField(max_length=200)
-    is_done = models.BooleanField()
+    is_done = models.BooleanField(default=False)
 
     def __str__(self) -> str:
         """Return model string representation."""
