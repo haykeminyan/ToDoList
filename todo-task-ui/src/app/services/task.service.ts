@@ -9,10 +9,17 @@ export class TaskService {
 
   constructor(private http: HttpClient) {
   }
-  get(){
-    const url = `http://localhost:8000/api/task`
-    console.log(this.http.get<HttpResponse<any>>(url, { observe: 'response' }))
-    return this.http.get<HttpResponse<any>>(url, { observe: 'response' })
+  get(sortColumn: string, sortType: string, searchKey: string, currentPage: number,pageSize: number): Observable<HttpResponse<HttpResponse<any>>> {
+    let url = `http://localhost:8000/api/task?p=${currentPage}&page_size=${pageSize}`
+    if (sortColumn && sortType && searchKey){
+      url = `${url}&q=${searchKey}&ordering=${sortColumn}`
+    }
+    if(sortColumn && sortType){
+      url = `${url}&ordering=${sortColumn}`
+    }
+    console.log(url)
+
+    return this.http.get<HttpResponse<any>>(url, { observe: 'response' });
   }
   getTask(id: any){
     const url = `http://localhost:8000/api/task/${id}`
