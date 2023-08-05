@@ -6,6 +6,7 @@ Backend part
 
 * Django 4.2.4
 * Django Rest Framework 3.14.0
+* Python 3.9
 * Pytest 7.4.0
 
 How to launch locally via docker:
@@ -22,7 +23,13 @@ Endpoints which can be used in this application
 4. users/
 5. users/<int:pk>/
 
-Frontend part now in progress :=) Hope that soon will be ready.
+Frontend part
+
+How to launch locally:
+1. npm run start
+
+* Angular 14.2.3
+* Typescript 4.7.2
 
 Project Description:
 Develop a straightforward and efficient Todo List application equipped with the following essential features:
